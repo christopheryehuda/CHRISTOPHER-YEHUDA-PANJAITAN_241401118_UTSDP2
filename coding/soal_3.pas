@@ -1,35 +1,21 @@
 uses crt;
 var
-  n, i, j: integer;
-  prima: boolean;
+  tinggi, i, j: integer;
 
 begin
   clrscr;
-  write('Masukkan nilai n: ');
-  readln(n);
-  
-  write('Bilangan prima antara 1 dan ', n, ' adalah: ');
+  write('Tinggi segitiga: ');
+  readln(tinggi);
 
-  for i := 2 to n do
+  for i := 1 to tinggi do
   begin
-    prima := true;
-    
-    for j := 2 to trunc(Sqrt(i)) do
+    for j := 1 to i do
     begin
-      if (i mod j = 0) then
-      begin
-        prima := false;
-        break;
-      end;
+      if j mod 2 = 1 then
+        write('1')  
+      else
+        write('0');
     end;
-
-    if prima then
-    begin
-      write(i);
-      if i < n then
-        write(', ');
-    end;
+    writeln; 
   end;
-
-  writeln;
 end.
